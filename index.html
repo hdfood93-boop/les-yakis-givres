@@ -244,6 +244,27 @@ a { color: inherit; }
   color: var(--orange);
   text-shadow: 0 0 8px var(--orange-glow), 0 0 32px rgba(249,131,5,.35);
   user-select: none;
+  position: relative;
+}
+/* Reflet discret qui balaie l'enseigne toutes les 7 s */
+.hero-sign::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  text-shadow: none;
+  background: linear-gradient(105deg, transparent 42%, rgba(255,240,215,.55) 50%, transparent 58%) no-repeat;
+  background-size: 250% 100%;
+  background-position: 150% 0;
+  -webkit-background-clip: text;
+          background-clip: text;
+  animation: sign-shine 7s 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes sign-shine {
+  0%   { background-position: 150% 0; }
+  22%  { background-position: -50% 0; }
+  100% { background-position: -50% 0; }
 }
 
 /* Capsule cryogénique : carrousel des 3 boîtes, le givre fond au chargement */
@@ -794,7 +815,7 @@ footer { padding: 4rem var(--gutter) 2rem; background: #080709; border-top: 3px 
     </ul>
   </div>
 
-  <div class="hero-sign" aria-hidden="true">焼き鳥</div>
+  <div class="hero-sign" aria-hidden="true" data-text="焼き鳥">焼き鳥</div>
 
   <section class="pod notched" id="pod" aria-roledescription="carrousel" aria-label="Nos trois recettes">
     <div class="pod-frame notched">
