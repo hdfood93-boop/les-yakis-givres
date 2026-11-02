@@ -406,6 +406,20 @@ a { color: inherit; }
 .duo-text { max-width: 40ch; color: var(--blanc); opacity: .85; }
 
 /* ── PROFESSIONNELS ──────────────────────────────────────────────────── */
+.pro-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--brique);
+}
+.pro-kicker { display: flex; align-items: center; gap: .8rem; color: var(--orange); font-weight: 700; font-size: .85rem; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 1.2rem; }
+.pro-kicker::before { content: ""; width: 2.4rem; height: 2px; background: var(--rouge); }
+.pro-title { font-size: clamp(2rem, 4vw, 3.4rem); }
+.pro-title span { display: block; color: var(--or); }
+.pro-lead { color: var(--gris); font-size: 1.08rem; line-height: 1.7; max-width: 44ch; padding-left: 1.4rem; border-left: 2px solid var(--rouge); }
 .pro-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -707,6 +721,7 @@ footer { padding: 4rem var(--gutter) 2rem; background: #080709; border-top: 3px 
   .hero-sign { justify-self: start; }
   .menu { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pro-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pro-head { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .duo { grid-template-columns: 1fr; }
   .stores { grid-template-columns: 1fr; height: auto; }
   .stores-side { height: 380px; border-right: 0; border-bottom: 1px solid var(--brique); }
@@ -980,11 +995,12 @@ footer { padding: 4rem var(--gutter) 2rem; background: #080709; border-top: 3px 
 
 <!-- ── PROFESSIONNELS (contenu repris de la plaquette) ─────────────────── -->
 <section class="section" id="pros">
-  <div class="section-head">
+  <div class="pro-head">
     <div>
-      <h2 class="section-title">Distributeurs, restaurateurs : travaillons ensemble</h2>
-      <p class="section-intro">Implantée en France, notre entreprise fabrique des produits asiatiques halal, entre tradition et innovation. Chaque étape de fabrication est contrôlée pour garantir une qualité optimale.</p>
+      <p class="pro-kicker">Espace professionnels</p>
+      <h2 class="section-title pro-title">Distributeurs, restaurateurs :<span>travaillons ensemble</span></h2>
     </div>
+    <p class="pro-lead">Implantée en France, notre entreprise fabrique des produits asiatiques halal, entre tradition et innovation. Chaque étape de fabrication est contrôlée pour garantir une qualité optimale.</p>
   </div>
 
   <ul class="pro-grid">
