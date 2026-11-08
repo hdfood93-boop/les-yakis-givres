@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /banque-images/
 
 Sitemap: https://www.lesyakisgivres.fr/sitemap.xml
